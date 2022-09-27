@@ -11,7 +11,7 @@ class DisplayComponent extends React.Component {
         <div key={index} style={{ border: '3px #000 dashed', margin: '10px auto', width: '50%' }}>
           <div>{post[0]}</div>
           <div>{post[1]}</div>
-          <div><img src={post[2]} style={{ width: '200px' }} /></div>
+          <div><img src={post[2]} style={{ width: '100px' }} /></div>
         </div>
       )
     });

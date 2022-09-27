@@ -9,7 +9,6 @@ class AddPostComponent extends React.Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
-    this.fileInput = React.createRef();
   }
 
   handleTitleChange(e) {
@@ -40,7 +39,6 @@ class AddPostComponent extends React.Component {
             handleTitleChange={this.handleTitleChange}
             handleContentChange={this.handleContentChange}
             handleImageChange={this.handleImageChange}
-            fileInput={this.props.fileInput}
           />
         </form>
         <br />

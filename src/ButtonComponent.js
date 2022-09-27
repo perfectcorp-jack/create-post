@@ -10,7 +10,6 @@ class ButtonComponent extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
-    this.fileInput = React.createRef();
   }
 
   addPost = (post) => {
