@@ -9,6 +9,7 @@ class ButtonComponent extends React.Component {
     this.handleContentChange = this.handleContentChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
     this.fileInput = React.createRef();
   }
 
@@ -16,7 +17,7 @@ class ButtonComponent extends React.Component {
     const posts = this.props.posts;
     posts.push(post);
     console.log(posts);
-    this.setState({ 
+    this.setState({
       posts: posts,
     });
   }
@@ -38,9 +39,27 @@ class ButtonComponent extends React.Component {
     this.props.handleContentChange(e.target.value);
   }
 
+  handleImageChange(e) {
+    // const preview = document.querySelector('img');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+      // preview.src = reader.result;
+      this.setState({
+        image: reader.result,
+      });
+      console.log(reader.result);
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.addPost([this.props.title, this.props.content, this.fileInput]);
+    this.addPost([this.props.title, this.props.content, this.state.image]);
   }
 
   handleRemove(e) {
@@ -52,7 +71,7 @@ class ButtonComponent extends React.Component {
     return (
       <div>
         <br />
-        <input type='file' accept='image/*' ref={this.fileInput} />
+        <input type='file' accept='image/*' onChange={this.handleImageChange} />
         <button style={{ width: '100px' }} onClick={this.handleSubmit}>submit</button>
         <button style={{ width: '100px' }} onClick={this.handleRemove}>remove</button>
       </div>

@@ -8,6 +8,7 @@ class AddPostComponent extends React.Component {
     super(props);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
     this.fileInput = React.createRef();
   }
 
@@ -17,6 +18,10 @@ class AddPostComponent extends React.Component {
 
   handleContentChange(e) {
     this.props.handleContentChange(e.target.value);
+  }
+
+  handleImageChange(e) {
+    
   }
 
   render() {
@@ -34,6 +39,7 @@ class AddPostComponent extends React.Component {
             posts={this.props.posts}
             handleTitleChange={this.handleTitleChange}
             handleContentChange={this.handleContentChange}
+            handleImageChange={this.handleImageChange}
             fileInput={this.props.fileInput}
           />
         </form>

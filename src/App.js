@@ -12,12 +12,13 @@ class App extends React.Component {
       title: '',
       content: 'Please input Content.',
       image: '',
-      posts: [],
+      posts: {},
     };
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
     this.fileInput = React.createRef();
   }
 
@@ -31,6 +32,13 @@ class App extends React.Component {
     this.setState({
       content: content,
     });
+  }
+
+  handleImageChange(e) {
+    console.log(e.target.files[0]);
+    // this.setState({
+    //   image: e.target.files[0], 
+    // });
   }
 
   handleSubmit(posts) {
@@ -50,6 +58,7 @@ class App extends React.Component {
           handleTitleChange={this.handleTitleChange}
           handleContentChange={this.handleContentChange}
           handleSubmit={this.handleSubmit}
+          handleImageChange={this.handleImageChange}
           fileInput={this.fileInput}
         />
         <DisplayComponent 
