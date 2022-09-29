@@ -15,7 +15,7 @@ class DisplayComponent extends React.Component {
             {post.content}
           </div>
           <div>
-            {post.image != '' ? <img src={post.image} alt="image" style={{ width: '100px' }} /> : null}
+            {post.image !== '' ? <img src={post.image} alt="image" style={{ width: '100px' }} /> : null}
           </div>
         </div>
       )

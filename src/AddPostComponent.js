@@ -71,8 +71,8 @@ class AddPostComponent extends React.Component {
           <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
           <div style={{ padding: '10px 0px' }}>Content:</div>
           <textarea cols="50" rows="5" value={this.state.content} onChange={this.handleContentChange}></textarea>
-          {this.state.image != '' ? <div style={{ padding: '10px 0px' }}>Image Preview:</div> : null}
-          {this.state.image != '' ? <img src={this.state.image} alt="image" style={{ width: '100px' }} /> : null}
+          {this.state.image !== '' ? <div style={{ padding: '10px 0px' }}>Image Preview:</div> : null}
+          {this.state.image !== '' ? <img src={this.state.image} alt="image" style={{ width: '100px' }} /> : null}
           <br />
           <br />
           <input type='file' accept='image/*' onChange={this.handleImageChange} ref={this.myRef} />
